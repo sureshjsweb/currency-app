@@ -1,0 +1,62 @@
+[
+  {
+    "base": "AUD",
+    "baseValue": 1.0,
+    "terms": "USD",
+    "termsValue": 0.8371
+  },
+  {
+    "base": "CAD",
+    "baseValue": 1.0,
+    "terms": "USD",
+    "termsValue": 0.8711
+  },
+  {
+    "base": "USD",
+    "baseValue": 1.0,
+    "terms": "CNY",
+    "termsValue": 6.1715
+  },
+  {
+    "base": "EUR",
+    "baseValue": 1.0,
+    "terms": "USD",
+    "termsValue": 1.2315
+  },
+  {
+    "base": "GBP",
+    "baseValue": 1.0,
+    "terms": "USD",
+    "termsValue": 1.5683
+  },
+  {
+    "base": "NZD",
+    "baseValue": 1.0,
+    "terms": "USD",
+    "termsValue": 0.775
+  },
+  {
+    "base": "USD",
+    "baseValue": 1.0,
+    "terms": "JPY",
+    "termsValue": 119.95
+  },
+  {
+    "base": "EUR",
+    "baseValue": 1.0,
+    "terms": "CZK",
+    "termsValue": 27.6028
+  },
+  {
+    "base": "EUR",
+    "baseValue": 1.0,
+    "terms": "DKK",
+    "termsValue": 7.4405
+  },
+  {
+    "base": "EUR",
+    "baseValue": 1.0,
+    "terms": "NOK",
+    "termsValue": 8.6651
+  }
+]

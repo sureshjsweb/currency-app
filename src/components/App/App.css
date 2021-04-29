@@ -1,3 +1,4 @@
+@import url('../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 .flex-column {
   display: flex;
   flex-direction: column;
