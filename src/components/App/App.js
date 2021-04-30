@@ -7,8 +7,10 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
   const list = Object.keys(data.currencylist);
+
   dispatch(loadCurrency(list));
   const selectList = useSelector((state) => state.currency.list);
+
   return (<Converter
     list={selectList}
     convert={() => dispatch(convert())}

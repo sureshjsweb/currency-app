@@ -1,10 +1,28 @@
-@import url('../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url("../../../node_modules/bootstrap/dist/css/bootstrap.min.css");
 .flex-column {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.width-33 {
+  width: 33.3%;
+}
+
+.width-66 {
+  width: 66.6%;
+}
+
+.line-height-35 {
+  line-height: 35px;
+}
+
+.height-35 {
+  height: 35px;
 }
