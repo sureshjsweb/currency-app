@@ -12,16 +12,14 @@ function App() {
   dispatch(loadCrossVia(data.crossvia));
 
   const selectList = useSelector((state) => state.currency.list);
-  const selectCrossVia = useSelector(state => state.currency.crossvia);
   const selectResult = useSelector(state => state.currency.result);
 
   return (<Converter
     list={selectList}
-    crossvia={selectCrossVia}
     result={selectResult}
     convert={() => dispatch(convert())}
-    fromUpdated={(event) => dispatch(fromUpdated(event))}
-    toUpdated={(event) => dispatch(toUpdated(event))}
+    fromUpdated={() => dispatch(fromUpdated())}
+    toUpdated={() => dispatch(toUpdated())}
   />);
 }
 
