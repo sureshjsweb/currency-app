@@ -3,15 +3,26 @@ import { createSlice } from '@reduxjs/toolkit';
 const currencySlice = createSlice({
     name: 'currency',
     initialState: {
-        amount: []
+        list: [],
+        from: "",
+        to: "",
+        result: 0,
     },
     reducers: {
-        addCurrency: (state, action) => {
-            console.log(state, action);
-            state.amount = [...state.amount, action.payload];
+        loadCurrency: (state, action) => {
+            state.list = [...action.payload];
+        },
+        fromUpdated: (state, action) => {
+
+        },
+        toUpdated: (state, action) => {
+
+        },
+        convert: (state, action) => {
+
         }
     }
 });
 
-export const { addCurrency } = currencySlice.actions;
+export const { loadCurrency, fromUpdated, toUpdated, convert } = currencySlice.actions;
 export default currencySlice.reducer;
