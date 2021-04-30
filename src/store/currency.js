@@ -13,13 +13,13 @@ const currencySlice = createSlice({
             state.list = [...action.payload];
         },
         fromUpdated: (state, action) => {
-
+            console.log(action.payload);
         },
         toUpdated: (state, action) => {
-
+            console.log(action.payload);
         },
         convert: (state, action) => {
-
+            console.log('We are converting');
         }
     }
 });

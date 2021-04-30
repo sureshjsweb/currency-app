@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadCurrency } from '../../store/currency';
+import { convert, fromUpdated, toUpdated, loadCurrency } from '../../store/currency';
 import Converter from '../Converter/Converter';
 import data from '../../data/currency.json';
 import './App.css';
@@ -10,10 +9,12 @@ function App() {
   const list = Object.keys(data.currencylist);
   dispatch(loadCurrency(list));
   const selectList = useSelector((state) => state.currency.list);
-  useEffect(() => {
-
-  }, [list]);
-  return (<div><Converter list={selectList} /></div>);
+  return (<Converter
+    list={selectList}
+    convert={() => dispatch(convert())}
+    fromUpdated={(event) => dispatch(fromUpdated(event))}
+    toUpdated={(event) => dispatch(toUpdated(event))}
+  />);
 }
 
 export default App;
