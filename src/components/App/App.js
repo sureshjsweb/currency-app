@@ -11,15 +11,15 @@ function App() {
   dispatch(loadCurrency(list));
   dispatch(loadCrossVia(data.crossvia));
 
-  const selectList = useSelector((state) => state.currency.list);
+  const selectList = useSelector(state => state.currency.list);
   const selectResult = useSelector(state => state.currency.result);
 
   return (<Converter
     list={selectList}
     result={selectResult}
     convert={() => dispatch(convert())}
-    fromUpdated={() => dispatch(fromUpdated())}
-    toUpdated={() => dispatch(toUpdated())}
+    fromUpdated={(event) => dispatch(fromUpdated(event))}
+    toUpdated={(event) => dispatch(toUpdated(event))}
   />);
 }
 
