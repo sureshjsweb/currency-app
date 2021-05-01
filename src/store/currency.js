@@ -1,21 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import data from '../data/currency.json';
 
 const currencySlice = createSlice({
     name: 'currency',
     initialState: {
-        list: [],
-        from: "",
-        to: "",
+        list: Object.keys(data.currencylist),
+        from: "AUD",
+        to: "CAD",
         result: 0,
-        crossvia: {}
+        crossvia: data.crossvia
     },
     reducers: {
-        loadCurrency: (state, action) => {
-            state.list = [...action.payload];
-        },
-        loadCrossVia: (state, action) => {
-            state.crossvia = { ...action.payload };
-        },
         fromUpdated: (state, action) => {
             state.from = action.payload;
         },
@@ -31,5 +26,5 @@ const currencySlice = createSlice({
     }
 });
 
-export const { resultUpdated, loadCrossVia, loadCurrency, fromUpdated, toUpdated, convert } = currencySlice.actions;
+export const { resultUpdated, fromUpdated, toUpdated, convert } = currencySlice.actions;
 export default currencySlice.reducer;

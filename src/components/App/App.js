@@ -1,22 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { convert, fromUpdated, toUpdated, loadCurrency, loadCrossVia } from '../../store/currency';
+import { convert, fromUpdated, toUpdated } from '../../store/currency';
 import Converter from '../Converter/Converter';
-import data from '../../data/currency.json';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const list = Object.keys(data.currencylist);
-
-  dispatch(loadCurrency(list));
-  dispatch(loadCrossVia(data.crossvia));
-
-  const selectList = useSelector(state => state.currency.list);
-  const selectResult = useSelector(state => state.currency.result);
+  const selectCurrency = useSelector(state => state.currency);
 
   return (<Converter
-    list={selectList}
-    result={selectResult}
+    {...selectCurrency}
     convert={() => dispatch(convert())}
     fromUpdated={(event) => dispatch(fromUpdated(event))}
     toUpdated={(event) => dispatch(toUpdated(event))}

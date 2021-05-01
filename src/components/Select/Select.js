@@ -3,7 +3,7 @@ const Select = ({ label, list, changed, selectValue, onConvert }) => {
         <label className="line-height-35">{label}:  </label>
         <select
             className="form-control"
-            onChange={(event) => { changed(event.target.value); onConvert(); }}
+            onChange={(event) => changed(event.target.value)}
             defaultValue={selectValue}
         >{
                 list.map((item, index) => {
