@@ -1,4 +1,4 @@
-const Select = ({ label, list, changed, selectValue, onConvert }) => {
+const Select = ({ label, list, changed, selectValue }) => {
     return (<div className="flex-row col-md-3 mb-3">
         <label className="line-height-35">{label}:  </label>
         <select

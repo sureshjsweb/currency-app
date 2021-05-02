@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { convert, fromUpdated, toUpdated } from '../../store/currency';
 import Converter from '../Converter/Converter';
 import './App.css';
 
@@ -9,9 +8,7 @@ function App() {
 
   return (<Converter
     {...selectCurrency}
-    convert={() => dispatch(convert())}
-    fromUpdated={(event) => dispatch(fromUpdated(event))}
-    toUpdated={(event) => dispatch(toUpdated(event))}
+    dispatch={dispatch}
   />);
 }
 

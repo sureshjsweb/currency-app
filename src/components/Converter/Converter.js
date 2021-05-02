@@ -1,13 +1,9 @@
 import { React, Fragment } from 'react';
+import { fromUpdated, toUpdated } from '../../store/currency';
 import Select from '../Select/Select';
 import Input from './../Input/Input';
 
-const Converter = ({ from, to, crossvia, result, list, convert, fromUpdated, toUpdated }) => {
-
-    const convertCurrency = () => {
-        console.log(from, to);
-    }
-    convertCurrency();
+const Converter = ({ srcValue, from, to, rates, crossvia, result, list, dispatch }) => {
 
     return (<Fragment>
         <div className="flex-column">
@@ -19,20 +15,26 @@ const Converter = ({ from, to, crossvia, result, list, convert, fromUpdated, toU
             <Select
                 label="From"
                 list={list}
-                changed={fromUpdated}
-                selectValue={from}
-                onConvert={() => convert()}>
+                changed={(value) => dispatch(fromUpdated(value))}
+                selectValue={from}>
             </Select>
             <Select
                 label="To"
                 list={list}
-                changed={toUpdated}
-                selectValue={to}
-                onConvert={() => convert()}>
+                changed={(value) => dispatch(toUpdated(value))}
+                selectValue={to}>
             </Select>
         </div>
         <div className="flex-row">
-            <Input label="Value" type="text" value={1} convert={() => convert()} />
+            <Input
+                label="Value"
+                srcValue={srcValue}
+                type="text"
+                dispatch={dispatch}
+                from={from}
+                to={to}
+                rates={rates}
+            />
             <label className="mr-2">=</label>
             <label className="form-control col-md-3">{result}</label>
         </div>

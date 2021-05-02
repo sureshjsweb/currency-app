@@ -7,24 +7,29 @@ const currencySlice = createSlice({
         list: Object.keys(data.currencylist),
         from: "AUD",
         to: "CAD",
+        rates: data.rates,
+        srcValue: 1,
         result: 0,
         crossvia: data.crossvia
     },
     reducers: {
         fromUpdated: (state, action) => {
+            console.log(action.payload);
             state.from = action.payload;
         },
         toUpdated: (state, action) => {
+            console.log(action.payload);
             state.to = action.payload;
         },
-        convert: (state, action) => {
-            console.log('We are converting');
+        valueUpdated: (state, action) => {
+            state.srcValue = action.payload;
         },
         resultUpdated: (state, action) => {
             state.result = action.payload;
+            console.log(action.payload);
         }
     }
 });
 
-export const { resultUpdated, fromUpdated, toUpdated, convert } = currencySlice.actions;
+export const { resultUpdated, fromUpdated, toUpdated, valueUpdated } = currencySlice.actions;
 export default currencySlice.reducer;
