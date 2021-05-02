@@ -47,7 +47,10 @@ const Input = ({ srcValue, from, to, rates, crossvia, label, type, dispatch }) =
             className="form-control"
             defaultValue={1}
             type={type}
-            onChange={(event) => { dispatch(valueUpdated(parseFloat(event.target.value))); dispatch(resultUpdated(convertCurrency(event.target.value))); }} />
+            onChange={(event) => {
+                dispatch(valueUpdated(parseFloat(event.target.value)));
+                dispatch(resultUpdated(convertCurrency(event.target.value)));
+            }} />
     </div>);
 }
 
