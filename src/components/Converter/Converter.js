@@ -34,6 +34,7 @@ const Converter = ({ srcValue, from, to, rates, crossvia, result, list, dispatch
                 from={from}
                 to={to}
                 rates={rates}
+                crossvia={crossvia}
             />
             <label className="mr-2">=</label>
             <label className="form-control col-md-3">{result}</label>

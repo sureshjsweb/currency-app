@@ -14,11 +14,9 @@ const currencySlice = createSlice({
     },
     reducers: {
         fromUpdated: (state, action) => {
-            console.log(action.payload);
             state.from = action.payload;
         },
         toUpdated: (state, action) => {
-            console.log(action.payload);
             state.to = action.payload;
         },
         valueUpdated: (state, action) => {
@@ -26,7 +24,6 @@ const currencySlice = createSlice({
         },
         resultUpdated: (state, action) => {
             state.result = action.payload;
-            console.log(action.payload);
         }
     }
 });
