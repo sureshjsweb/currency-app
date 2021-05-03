@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Converter from '../Converter/Converter';
 import './App.css';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const selectCurrency = useSelector(state => state.currency);
 
