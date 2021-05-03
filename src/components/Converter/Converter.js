@@ -1,7 +1,8 @@
 import { React, Fragment } from 'react';
-import { fromUpdated, toUpdated } from '../../store/currency';
+import { fromUpdated, resultUpdated, toUpdated } from '../../store/currency';
 import Select from '../Select/Select';
 import Input from './../Input/Input';
+import utils from './../../services/utils-service';
 
 const Converter = ({ srcValue, from, to, rates, crossvia, result, list, dispatch }) => {
 
@@ -15,13 +16,21 @@ const Converter = ({ srcValue, from, to, rates, crossvia, result, list, dispatch
             <Select
                 label="From"
                 list={list}
-                changed={(value) => dispatch(fromUpdated(value))}
+                changed={(event) => {
+                    dispatch(fromUpdated(event.target.value));
+                    if (!isNaN(srcValue))
+                        dispatch(resultUpdated(utils.findCurrency(srcValue, crossvia, event.target.value, to, rates)))
+                }}
                 selectValue={from}>
             </Select>
             <Select
                 label="To"
                 list={list}
-                changed={(value) => dispatch(toUpdated(value))}
+                changed={(event) => {
+                    dispatch(toUpdated(event.target.value));
+                    if (!isNaN(srcValue))
+                        dispatch(resultUpdated(utils.findCurrency(srcValue, crossvia, from, event.target.value, rates)))
+                }}
                 selectValue={to}>
             </Select>
         </div>
